@@ -44,4 +44,8 @@ class User < ActiveRecord::Base
     # Build from other scores
   end
 
+  def total_score
+    self.basic_score + self.survey_score
+  end
+
 end
