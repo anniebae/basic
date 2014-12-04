@@ -23,28 +23,19 @@ c8493b7caf4745aab9e54a972b382c0e
 class BasicController < ApplicationController
   def index
 
-    # anniebae userID
-      # 19035535
-
-
     # gets all users with 'anniebae' in username
     url = "https://api.instagram.com/v1/users/search?q=anniebae&access_token=19035535.3f3ba19.cb0a2e4409fd437cb3e80e677a1c37f9"  
-
-    resp = HTTParty.get(url)
+    api_response = HTTParty.get(url)
 
     # gets user_id for first 'anniebae' in results from above
-     user_id = resp["data"][0]["id"]
+     user_id = api_response["data"][0]["id"]
 
     # gets most recent media from 'anniebae'
     url = "https://api.instagram.com/v1/users/19035535/media/recent/?access_token=19035535.3f3ba19.cb0a2e4409fd437cb3e80e677a1c37f9"
-
-    resp = HTTParty.get(url)
-
-    # gets text from 'anniebae's latest post
-    resp['data'][0]['caption']['text']
+    api_response = HTTParty.get(url)
 
     # gets ALL of latest (last 20) texts from posts
-    resp['data'].map { |post| post['caption']['text'] }  
+    latest_posts = api_response['data'].map { |post| post['caption']['text'] }  
 
   end
 

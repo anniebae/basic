@@ -8,6 +8,10 @@
 </head>
 <body>
 
+	<nav>
+		<%= render partial: current_user ? "/shared/user_nav" : "/shared/non_user_nav" %>
+	</nav>
+
 <%= yield %>
 
 </body>
