@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_surveys
   has_secure_password
   validates_presence_of :password, :on => :create
 
@@ -27,15 +28,18 @@ class User < ActiveRecord::Base
   def insta_score
     posts = self.instagram_posts
     words = ["starbucks", "i can't even", "thanks", 'some', 'wall']
+
+    # words = ["starbucks", "psl", "pumpkin spice latter", "uggs", "I can't even", "I literally can't", "juicy", "tiffany's", "plur", "edm", "event", "food", "girlfriend", "gf", "boyfriend", "bf", "north face", "fleece", "ootd", "tbt", "throwback", "fashion", "michael kors", "armcandy", "reality", "bravo", "yoga", "pants", "lululemon", "shopping", "pinterest", "diy", "skinny", "sorority", "frat", "selfie", "selfies", "neon", "nike", "rosche", "wait", "duckface", "kiss", "xoxo", "love", "peace", "qotd", "mani", "pedi", "nails", "bad hair day", "vegas", "hot dogs or legs", "diet", "lol", "omg", "lmao", "ryan gosling", "channing tatum", "joseph gordon-levitt", "joseph gordon levitt", "jgl", "gym", "workout", "iphone", "coffee", "latte", "cappuccino", "frap", "espresso", "run", "like"]
     score = {}
     words.each { |word| score[word] = posts.join(' ').downcase.scan(word).count }
     score
   end
 
   def basic_score
-    self.score = self.insta_score.
-
-
+    # self.score = self.insta_score.
+    score = self.insta_score
+    score.each {|key, count| score[key] += count }
+    score.inject(3) { |sum, value| sum += value[1] }
     # Build from other scores
   end
 
