@@ -29,7 +29,8 @@ class User < ActiveRecord::Base
     posts = self.instagram_posts
     words = ["starbucks", "i can't even", "thanks", 'some', 'wall']
 
-    # words = ["starbucks", "psl", "pumpkin spice latter", "uggs", "I can't even", "I literally can't", "juicy", "tiffany's", "plur", "edm", "event", "food", "girlfriend", "gf", "boyfriend", "bf", "north face", "fleece", "ootd", "tbt", "throwback", "fashion", "michael kors", "armcandy", "reality", "bravo", "yoga", "pants", "lululemon", "shopping", "pinterest", "diy", "skinny", "sorority", "frat", "selfie", "selfies", "neon", "nike", "rosche", "wait", "duckface", "kiss", "xoxo", "love", "peace", "qotd", "mani", "pedi", "nails", "bad hair day", "vegas", "hot dogs or legs", "diet", "lol", "omg", "lmao", "ryan gosling", "channing tatum", "joseph gordon-levitt", "joseph gordon levitt", "jgl", "gym", "workout", "iphone", "coffee", "latte", "cappuccino", "frap", "espresso", "run", "like"]
+    # words = ["starbucks", "psl", "pumpkin spice latter", "uggs", "I can't even", "I literally can't", "juicy", "tiffany's", "plur", "edm", "event", "food", "girlfriend", "gf", "boyfriend", "bf", "north face", "fleece", "ootd", "tbt", "throwback", "fashion", "michael kors", "armcandy", "reality", "bravo", "yoga", "pants", "lululemon", "shopping", "pinterest", "diy", "skinny", "sorority", "frat", "selfie", "selfies", "neon", "nike", "rosche", "wait", "duckface", "kiss", "xoxo", "love", "peace", "qotd", "mani", "pedi", "nails", "bad hair day", "vegas", "hot dogs or legs", "diet", "lol", "omg", "lmao", "ryan gosling", "channing tatum", "joseph gordon-levitt", "joseph gordon levitt", "jgl", "gym", "workout", "iphone", "coffee", "latte", "cappuccino", "frap", "espresso", "run", "like", "basic", "caramel", "macchiato", "fitness"]
+
     score = {}
     words.each { |word| score[word] = posts.join(' ').downcase.scan(word).count }
     score
