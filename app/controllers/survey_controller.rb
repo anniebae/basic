@@ -15,5 +15,5 @@ class SurveyController < ApplicationController
     # user.survey_score = (survey.select{ |question, response| response = "yes" }.length * 3)
   end
 
-  
+
 end
