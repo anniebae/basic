@@ -1,11 +1,10 @@
 class User < ActiveRecord::Base
-  has_surveys
   has_secure_password
   validates_presence_of :password, :on => :create
 
   def self.sort_by_total_score
-    # puts 'sorting....'
-    ranked_by_total = User.sort_by do |user|
+    puts 'sorting....'
+    ranked_by_total = self.all.sort_by do |user|
       user.total_score
     end
     ranked_by_total.reverse
