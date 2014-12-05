@@ -3,6 +3,13 @@ class User < ActiveRecord::Base
   has_secure_password
   validates_presence_of :password, :on => :create
 
+  def self.sort_by_total_score
+    # puts 'sorting....'
+    ranked_by_total = User.sort_by do |user|
+      user.total_score
+    end
+    ranked_by_total.reverse
+  end
 
   def instagram_account_info
     # gets all users with 'anniebae' in username
@@ -40,7 +47,7 @@ class User < ActiveRecord::Base
     # self.score = self.insta_score.
     score = self.insta_score
     score.each {|key, count| score[key] += count }
-    score.inject(10) { |sum, value| sum += value[1] }
+    score.inject(3) { |sum, value| sum += value[1] }
     # Build from other scores
   end
 
