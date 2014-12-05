@@ -41,6 +41,4 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'httparty'
 gem 'pry'
 
-gem 'questionnaire_engine', '0.1', :require => "survey"
-
-gem 'survey'
+gem 'json'
