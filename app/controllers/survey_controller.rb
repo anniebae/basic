@@ -7,9 +7,6 @@ class SurveyController < ApplicationController
     @participant ||= current_user
   end
 
-
-
-
   def survey_score
     response_yes = survey.select { |question, response | response = "yes" }
     user.survey_score = response_yes * 3

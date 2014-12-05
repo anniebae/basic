@@ -16,13 +16,3 @@ class UserApiController < ApplicationController
   end
 
 end
-
-
-
-# {
-# id: 14307,
-# turns: "0147593",
-# state: "XO-XXX-O-O",
-# complete: true,
-# winner: "X"
-# },

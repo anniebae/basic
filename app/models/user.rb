@@ -2,6 +2,11 @@ class User < ActiveRecord::Base
   has_secure_password
   validates_presence_of :password, :on => :create
 
+  def survey? 
+    # determine whether or not user has submitted initital survey.  return true if they have.  return false if otherwise.
+    survey_completed
+  end
+
   def self.sort_by_total_score
     puts 'sorting....'
     ranked_by_total = self.all.sort_by do |user|

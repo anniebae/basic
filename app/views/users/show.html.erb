@@ -1,1 +1,7 @@
+<!-- render survey if user hasn't subitted -->
+<% unless current_user.survey? %>
+	<%= render partial: 'survey' %>
+<% end %>
+
+
 <h1><%= @user.username %></h1>
