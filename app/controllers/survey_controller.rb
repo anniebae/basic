@@ -16,4 +16,9 @@ class SurveyController < ApplicationController
   end
 
 
+  # def survey?
+
+  # end
+
+
 end
