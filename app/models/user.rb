@@ -2,14 +2,9 @@ class User < ActiveRecord::Base
   has_secure_password
   validates_presence_of :password, :on => :create
 
-  def survey?
-    # determine whether or not user has submitted initital survey.  return true if they have.  return false if otherwise.
-    
-    # self.survey_completed = true
-    # self.save
 
-    
-
+  def completed_survey?
+    return survey_completed
   end
 
 
@@ -24,7 +19,7 @@ class User < ActiveRecord::Base
   def instagram_account_info
     # gets all users with 'anniebae' in username
     username = self.instagram_account
-    api_response = HTTParty.get("https://api.instagram.com/v1/users/search?q=#{username}&access_token=19035535.3f3ba19.cb0a2e4409fd437cb3e80e677a1c37f9")
+    api_response = HTTParty.get("https://api.instagram.com/v1/users/search?q=#{username}&access_token=ENV['INSTAGRAM_TOKEN']")
     api_response["data"][0]
   end
 
@@ -38,7 +33,7 @@ class User < ActiveRecord::Base
 
   def instagram_posts
     instagram_id = self.instagram_account_id
-    api_response = HTTParty.get("https://api.instagram.com/v1/users/#{instagram_id}/media/recent/?access_token=19035535.3f3ba19.cb0a2e4409fd437cb3e80e677a1c37f9")
+    api_response = HTTParty.get("https://api.instagram.com/v1/users/#{instagram_id}/media/recent/?access_token=ENV['INSTAGRAM_TOKEN']")
     api_response['data'].map { |post| post['caption']['text'] } 
   end
 

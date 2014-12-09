@@ -17,8 +17,8 @@ class UsersController < ApplicationController
 
   def create
     user = User.create(user_params)
+    session[:user_id] = user.id
     redirect_to user_path(user)
-
 
   end
 
@@ -27,9 +27,17 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(params[:id])
-    user.update(user_params)
-    redirect_to user_path(user)
+
+    survey = params["survey"]
+
+    # calculates survey_score
+    response_yes = survey.select { |question, response | response == "YES" }.length
+    current_user.survey_score = response_yes * 3
+    current_user.survey_completed = true
+    current_user.save!
+    redirect_to users_path
+    # user.survey_score = (survey.select{ |question, response| response = "yes" }.length * 3)
+
   end
 
   def destroy

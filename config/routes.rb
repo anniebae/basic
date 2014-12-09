@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "welcome#index"
 
-  resources :users, only: [ :index, :show, :new, :create ]
+  resources :users, only: [ :index, :show, :new, :create, :update ]
 
   get '/api/users' => "user_api#index"
   get '/api/users/:id' => "user_api#show"
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   post "/sessions" => "sessions#login"
   delete "/sessions" => "sessions#logout", as: "logout"
 
-  post "/survey_complete" => "survey#survey_score"
+
 
 end
 

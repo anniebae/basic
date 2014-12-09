@@ -2,7 +2,7 @@
 
 
 <!-- render survey if user hasn't submitted -->
-<% unless current_user.survey? %>
+<% unless current_user.completed_survey? %>
 	<%= render partial: 'survey' %>
 <% end %>
 
