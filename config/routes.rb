@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   post "/sessions" => "sessions#login"
   delete "/sessions" => "sessions#logout", as: "logout"
 
+  post "/survey_complete" => "survey#survey_score"
+
 end
+
