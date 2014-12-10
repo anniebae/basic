@@ -34,30 +34,24 @@ class User < ActiveRecord::Base
   def instagram_posts
     instagram_id = self.instagram_account_id
     api_response = HTTParty.get("https://api.instagram.com/v1/users/#{instagram_id}/media/recent/?access_token=#{ENV['INSTAGRAM_TOKEN']}")
-    if !api_response['data'].empty?
-      api_response['data'].map do |post| 
-        if post['caption']
-          post['caption']['text']
-        else
-          ''
-        end
+    api_response['data'].map do |post| 
+      if post['caption']
+        post['caption']['text']
+      else
+        ''
       end
-    else 
-      'No data available'
     end
   end
 
   def insta_score
     posts = self.instagram_posts
+    words = ["starbucks", "i can't even", "thanks", 'some', 'wall']
+
+    # words = ["starbucks", "psl", "pumpkin spice latter", "uggs", "I can't even", "I literally can't", "I just can't", "juicy", "tiffany's", "plur", "edm", "event", "food", "breakfast", "brunch", "lunch", "dinner", "girlfriend", "girlfriends", "gf", "boyfriend", "bf", "north face", "fleece", "ootd", "tbt", "throwback", "fashion", "michael kors", "armcandy", "reality", "bravo", "yoga", "pants", "lululemon", "lululemons", "shopping", "pinterest", "diy", "skinny", "sorority", "frat", "selfie", "selfies", "neon", "nike", "rosche", "wait", "duckface", "kiss", "xoxo", "love", "peace", "qotd", "mani", "pedi", "nails", "bad hair day", "vegas", "hot dogs or legs", "diet", "lol", "omg", "lmao", "ryan gosling", "channing tatum", "joseph gordon-levitt", "joseph gordon levitt", "jgl", "gym", "workout", "iphone", "coffee", "latte", "cappuccino", "frap", "espresso", "run", "like", "basic", "caramel", "macchiato", "fitness", "half", "water", "seltzer", "half", "baby", "shoes", "sale", "favorite", "fave", "bestfriend", "bestie", "besties", "bff", "bffs", "obvi", "obviously", "yolo", "swag", "bitch", "bitches", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "turnt", "adorable", "ugh", "cute", "so cute", "sweater weather", "tgif", "sunday funday", "twinsies", "funsies", "ew", "totally", "totes", "yay", "mirror", "outfit", "last night", "mimosas", "bloody mary", "bottomless brunch", "namaste", "obsessed", "bagel", "bagels", "boozy", "i die", "morning", "goodnight", "exercise", "blessed", "situation", "!"]
+
+    
     score = {}
-    if posts != 'No data available'
-      words = ["starbucks", "i can't even", "thanks", 'some', 'wall']
-
-      # words = ["starbucks", "psl", "pumpkin spice latter", "uggs", "I can't even", "I literally can't", "I just can't", "juicy", "tiffany's", "plur", "edm", "event", "food", "breakfast", "brunch", "lunch", "dinner", "girlfriend", "girlfriends", "gf", "boyfriend", "bf", "north face", "fleece", "ootd", "tbt", "throwback", "fashion", "michael kors", "armcandy", "reality", "bravo", "yoga", "pants", "lululemon", "lululemons", "shopping", "pinterest", "diy", "skinny", "sorority", "frat", "selfie", "selfies", "neon", "nike", "rosche", "wait", "duckface", "kiss", "xoxo", "love", "peace", "qotd", "mani", "pedi", "nails", "bad hair day", "vegas", "hot dogs or legs", "diet", "lol", "omg", "lmao", "ryan gosling", "channing tatum", "joseph gordon-levitt", "joseph gordon levitt", "jgl", "gym", "workout", "iphone", "coffee", "latte", "cappuccino", "frap", "espresso", "run", "like", "basic", "caramel", "macchiato", "fitness", "half", "water", "seltzer", "half", "baby", "shoes", "sale", "favorite", "fave", "bestfriend", "bestie", "besties", "bff", "bffs", "obvi", "obviously", "yolo", "swag", "bitch", "bitches", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "turnt", "adorable", "ugh", "cute", "so cute", "sweater weather", "tgif", "sunday funday", "twinsies", "funsies", "ew", "totally", "totes", "yay", "mirror", "outfit", "last night", "mimosas", "bloody mary", "bottomless brunch", "namaste", "obsessed", "bagel", "bagels", "boozy", "i die", "morning", "goodnight", "exercise", "blessed", "situation", "!"]
-
-      
-      words.each { |word| score[word] = posts.join(' ').downcase.scan(word).count }
-    end
+    words.each { |word| score[word] = posts.join(' ').downcase.scan(word).count }
     score
   end
 
