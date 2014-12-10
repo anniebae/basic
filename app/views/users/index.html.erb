@@ -1,5 +1,7 @@
 <ul>
-	<% @users.each do |username| %>
-		<li><%= username.username %> || <%= username.instagram_account %></li>
+	<% @users.each do |user| %>
+		<li><%= user.username %> || <%= user.instagram_account %> <%= user.total_score %></li> 
 	<% end %>
+
+
 </ul>

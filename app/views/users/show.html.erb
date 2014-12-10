@@ -1,9 +1,14 @@
 <h1><%= @user.username %></h1>
 
 
+<%= @user.instagram_profile_picture %>
+<br>
+TOTAL SCORE: <%= @user.total_score %>
+
+
+
+
 <!-- render survey if user hasn't submitted -->
 <% unless current_user.completed_survey? %>
 	<%= render partial: 'survey' %>
 <% end %>
-
-
