@@ -1,6 +1,8 @@
 <ul>
 	<% User.sort_by_total_score.each do |user| %>
-		<li><%= user.username %> || <%= user.instagram_account %> || <%= user.total_score %></li> 
+		<li>
+			<img src="<%= user.instagram_profile_picture  %>" alt=""> || <%= user.instagram_account %> || <%= user.total_score %>
+		</li> 
 	<% end %>
 
 
