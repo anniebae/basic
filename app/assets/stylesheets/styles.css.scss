@@ -24,10 +24,22 @@ input {
 	color: black;
 }
 
+.scoreboard_profile_img {
+	width: 60px;
+	height: 60px;
+	border-radius: 30px;
+}
+
+table {
+	border-collapse: collapse;
+	width: 80%;
+	height: 60%;
+}
+
 tr {
-	outline: thin solid #6C196C;
+	outline: thin solid #664C80;
 }
 
 td {
-	outline: thin solid #6C196C;
+	outline: thin solid #664C80;
 }

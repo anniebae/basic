@@ -1,12 +1,4 @@
-<!-- <ul>
-	<% User.sort_by_total_score.each do |user| %>
-		<li>
-			<img src="<%= user.instagram_profile_picture  %>" alt=""> || <%= user.instagram_account %> || <%= user.total_score %>
-		</li> 
-	<% end %>
 
-
-</ul> -->
 
 <div class="scoreboard-table">
 	<table class="scoreboard">
@@ -22,8 +14,8 @@
 	<% User.sort_by_total_score.each do |user| %>
 			<tr>
 				<td>User rank goes here</td>
-				<td><img src="<%= user.instagram_profile_picture  %>" alt=""></td>
-				<td><%= user.instagram_account %></td>
+				<td><img src="<%= user.instagram_profile_picture  %>" class="scoreboard_profile_img"></td>
+				<td><a href="http://instagram.com/<%= user.instagram_account %>" target="_blank"><%= user.instagram_account %></a></td>
 				<td><%= user.total_score %></td>
 			</tr>
 	<% end %>
