@@ -1,3 +1,5 @@
+
+
 body {
 	background-color: #462551;
 	color: white;
@@ -8,11 +10,24 @@ body {
 	width: 200px;
 }
 
+.welcome_logo {
+	height: 800px;
+	width: 800px;
+}
+
 .survey {
 	margin-left: 50px;
 	padding-bottom: 50px;
 }
 
 input {
-	color: black
+	color: black;
+}
+
+tr {
+	outline: thin solid #6C196C;
+}
+
+td {
+	outline: thin solid #6C196C;
 }

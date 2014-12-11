@@ -1,4 +1,35 @@
 <div>
 	<%= button_to "logout", logout_path, method: :delete %>
 	<%= button_to "profile", user_path(current_user), method: :get %>
+	<%= button_to "Basic Scoreboard", users_path, method: :get %>
 </div>
+
+
+<!-- <div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			
+			<a href="#" class="navbar-brand">BASIC</a>
+
+			<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			<div class="collapse navbar-collapse navHeaderCollapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><%= link_to "Basic Scoreboard", users_path, method: :get %></a></li>
+					<li><a href="#"><%= link_to "Profile", user_path(current_user), method: :get %></a></li>
+					<li><a href="#"><%= link_to "Log Out", logout_path, method: :delete %></a></li>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="navbar navbar-default navbar-fixed-bottom">
+		<div class="container">
+			<p class="navbar-text pull-left">© Annie Bae</p>
+			<a href="http://instagram.com/anniebae" target="_blank" class="navbar-btn btn-info btn pull-right">Follow on Instagram</a>
+		</div>
+	</div> -->
