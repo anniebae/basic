@@ -1,4 +1,16 @@
+@font-face {
+  font-family: 'NovitoNova';    
+  src: url('/assets/fonts/NovitoNova-Thin.otf');
+  src: url('/assets/fonts/NovitoNova-Thin.otf?#iefix') format('embedded-opentype'),
+  url('/assets/fonts/NovitoNova-Thin.woff2') format('woff2'),
+  url('/assets/fonts/NovitoNova-Thin.ttf') format('truetype'),
+  url('/assets/fonts/NovitoNova-Thin.svg#webfont3AwWkQXK') format('svg');
+}
 
+.navbar-brand {
+	font-family: NovitoNova;
+	font-size: 400%;
+}
 
 body {
 	background-color: white;
@@ -30,15 +42,46 @@ input {
 	border-radius: 30px;
 }
 
+
+
+
+
+
+
+
 table {
-	width: 80%;
+  border-collapse: collapse;
+  width: 80%;
 	height: 60%;
 }
+table td, table th {
+  border: 1px solid black;
+}
+table tr:first-child th {
+  border-top: 0;
+}
+table tr:last-child td {
+  border-bottom: 0;
+}
+table tr td:first-child,
+table tr th:first-child {
+  border-left: 0;
+}
+table tr td:last-child,
+table tr th:last-child {
+  border-right: 0;
+}
+
+
 
 tr {
-	border: 1px solid black;
+	padding-left: 10px;
 }
 
 td {
-	border: 1px solid black;
+	padding-left: 10px;
+}
+
+th {
+	padding-left: 10px;
 }
