@@ -12,4 +12,12 @@ userCollection.fetch().done(function(){
 
 
 // NOT SURE ABOUT BELOW
-// var userListView = new userListViewew(users)
+var userListView = new UserListView({
+	collection: userCollection
+})
+
+userListView.fetch().done(function(){
+	router = new Router({
+		collection: userCollection
+	})
+})
