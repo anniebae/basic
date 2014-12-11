@@ -1,3 +1,5 @@
+console.log('this works');
+
 var UserListView = Backbone.View.extend({
 	tagName: 'table',
 	template: _.template($('#user-list-template').html()),
@@ -8,3 +10,4 @@ var UserListView = Backbone.View.extend({
 		return this;
 	}
 });
+

@@ -12,4 +12,4 @@ userCollection.fetch().done(function(){
 
 
 // NOT SURE ABOUT BELOW
-var userListView = new UserListView(users)
+// var userListView = new userListViewew(users)

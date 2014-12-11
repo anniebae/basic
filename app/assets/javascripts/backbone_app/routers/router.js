@@ -7,7 +7,7 @@ var Router = Backbone.Router.extend({
 	routes: {
 		"" 					: "welcome#index",
 		"users" 		: "index",
-		"users/new" : "new"
+		"users/new" : "new",
 		"users/:id" : "show",
 		"*default" 	: "index"
 	},
