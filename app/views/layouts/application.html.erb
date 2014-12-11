@@ -14,5 +14,46 @@
 
 <%= yield %>
 
+
+
+
+<script type="text/template" id="user-list-template">
+	<%% collection.each(function(user){  %>
+		<tr>
+			<td>
+				<%%= @counter %><%% @counter += 1 %>
+			</td>
+			<td>
+				<img src="<%%= user.instagram_profile_picture  %>" class="scoreboard_profile_img">
+			</td>
+			<td>
+				<a href="http://instagram.com/<%%= user.instagram_account %>" target="_blank"><%%= user.instagram_account %></a>
+			</td>
+			<td>
+				<%%= user.total_score %>
+			</td>
+		</tr>
+
+	<%% })  %>
+</script>
+
+
+<script type="text/template" id="user-profile-template">
+	<h1><%%= username %></h1>
+	<h1><%%= instagram_account %></h1>
+	<img src="<%%= instagram_profile_picture  %>">
+	<p>TOTAL SCORE: <%%= total_score %></p>
+</script>
+
+
+<script type="text/template" id="new-user-view-template">
+	<form action="#">
+		<input type="text" name="name" placeholder="Name" />
+		<input type="password" name="password" placeholder="Password" />
+		<input type="text" name="instagram_account" placeholder="Instagram Account" />
+		<input type="submit" />
+	</form>
+</script>
+
 </body>
 </html>

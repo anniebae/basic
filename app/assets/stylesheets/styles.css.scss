@@ -1,8 +1,8 @@
 
 
 body {
-	background-color: #462551;
-	color: white;
+	background-color: white;
+	color: black;
 }
 
 .survey_img {
@@ -31,15 +31,14 @@ input {
 }
 
 table {
-	border-collapse: collapse;
 	width: 80%;
 	height: 60%;
 }
 
 tr {
-	outline: thin solid #664C80;
+	border: 1px solid black;
 }
 
 td {
-	outline: thin solid #664C80;
+	border: 1px solid black;
 }
