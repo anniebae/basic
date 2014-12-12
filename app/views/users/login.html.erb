@@ -1,14 +1,22 @@
-<h3>Hey! Log in...</h3>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-<form action="/sessions" method="post">
-	<%= token_tag %>
-	<p>
-		USERNAME:
-		<input type="text" name="username">
-	</p>
-	<p>
-		PASSWORD:
-		<input type="password" name="password">
-	</p>
-	<input type="submit" name="Log In">
-</form>
+<div class="login-form">
+	<h3 class="login">LOG IN.</h3>
+
+	<form action="/sessions" method="post">
+		<%= token_tag %>
+		<p>
+			USERNAME:
+			<input type="text" name="username">
+		</p>
+		<p>
+			PASSWORD:
+			<input type="password" name="password">
+		</p>
+		<input type="submit" name="Log In">
+	</form>
+</div>
