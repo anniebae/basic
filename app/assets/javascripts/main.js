@@ -21,3 +21,10 @@ userListView.fetch().done(function(){
 		collection: userCollection
 	})
 })
+
+
+$(document).ready(function(e){
+	$('#dropdown').on('click', function() {
+		$('.dropdownposts').slideToggle();
+	});
+})
