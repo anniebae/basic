@@ -18,5 +18,6 @@
 //= require backbone_app/models/User
 //= require backbone_app/collections/user_collection
 //= require backbone_app/views/UserTableView
+//= require backbone_app/views/user_profile_view
 //= require backbone_app/routers/router
 //= require main

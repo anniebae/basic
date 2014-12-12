@@ -30,6 +30,12 @@
     <%% }) %>
   </script>
 
+<script type="text/template" id="user-profile-template">
+  <h1><%%= username %></h1>
+  <h1>@<%%= instagram_account %></h1>
+  <img src="<%%= instagram_profile_picture  %>">
+  <p>TOTAL SCORE: <%%= total_score %></p>
+</script>
 
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
@@ -37,9 +43,9 @@
 </head>
 <body>
 
-	<nav>
-		<%= render partial: current_user ? "/shared/user_nav" : "/shared/non_user_nav" %>
-	</nav>
+  <nav>
+    <%= render partial: current_user ? "/shared/user_nav" : "/shared/non_user_nav" %>
+  </nav>
 
 <%= yield %>
 
@@ -50,12 +56,6 @@
 
 
 
-<script type="text/template" id="user-profile-template">
-	<h1><%%= username %></h1>
-	<h1><%%= instagram_account %></h1>
-	<img src="<%%= instagram_profile_picture  %>">
-	<p>TOTAL SCORE: <%%= total_score %></p>
-</script>
 
 
 <script type="text/template" id="new-user-view-template">

@@ -10,7 +10,7 @@ var Router = Backbone.Router.extend({
     "users/:id" : "show",
     "*default"  : "index"
   },
-
+  
 
   setView: function(view){
     if (this.view) {

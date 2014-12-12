@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
     # gets all users with 'anniebae' in username
     username = self.instagram_account
     api_response = HTTParty.get("https://api.instagram.com/v1/users/search?q=#{username}&access_token=#{ENV['INSTAGRAM_TOKEN']}")
-    api_response["data"][0]
+    api_response["data"][0] rescue {}
   end
 
   def instagram_profile_picture

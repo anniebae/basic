@@ -1,7 +1,11 @@
+
+
 var userCollection, 
     router;
 
 $(function(){
+
+
   userCollection = new UserCollection();
 
   userCollection.fetch().done(function(){
@@ -14,16 +18,6 @@ $(function(){
 });
 
 
-// NOT SURE ABOUT BELOW
-// var userListView = new UserListView({
-// 	collection: userCollection
-// })
-
-// userListView.fetch().done(function(){
-// 	router = new Router({
-// 		collection: userCollection
-// 	})
-// })
 
 
 // $(document).ready(function(e){
