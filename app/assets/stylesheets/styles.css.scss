@@ -53,9 +53,11 @@ table {
   border-collapse: collapse;
   width: 80%;
 	height: 60%;
+  text-align: center;
 }
 table td, table th {
   border: 1px solid black;
+  text-align: center;
 }
 table tr:first-child th {
   border-top: 0;
@@ -72,19 +74,12 @@ table tr th:last-child {
   border-right: 0;
 }
 
-
-
-tr {
-	padding-left: 10px;
+.table-container {
+  padding-left: 15%;
 }
 
-td {
-	padding-left: 10px;
-}
 
-th {
-	padding-left: 10px;
-}
+
 
 .scoreboard_profile_img:hover {
 	opacity: 1;
@@ -102,8 +97,4 @@ th {
 
 .avatar_photo {
 	width: 38px;
-}
-
-.ig_account {
-	
 }
