@@ -10,3 +10,7 @@ var UserProfileView = Backbone.View.extend({
 		return this;
 	},
 })
+
+var Test = 123;
+
+var asdfasdf = "asdfasdfasdf"

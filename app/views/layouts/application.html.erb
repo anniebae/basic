@@ -2,8 +2,29 @@
 <html>
 <head>
   <title>Basic</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  
+  <script type="text/template" id="user-table-template">
+    <%% collection.each(function(user, index){  %>
+      <tr>
+        <td>
+          <%%= index + 1 %>
+        </td>
+        <td>
+          <img src="<%%= user.get('instagram_profile_picture')  %>" class="scoreboard_profile_img">
+        </td>
+        <td>
+          <a href="http://instagram.com/<%%= user.get('instagram_account') %>" target="_blank"><%%= user.get('instagram_account') %></a>
+        </td>
+        <td>
+          <%%= user.get('total_score')%>
+        </td>
+      </tr>
+    <%% }) %>
+  </script>
+
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -17,25 +38,8 @@
 
 
 
-<script type="text/template" id="user-list-template">
-	<%% collection.each(function(user){  %>
-		<%%= console.log(user) %>
-		<tr>
-			<td>
-				<%%= @counter %><%% @counter += 1 %>
-			</td>
-			<td>
-				<img src="<%%= user.instagram_profile_picture  %>" class="scoreboard_profile_img">
-			</td>
-			<td>
-				<a href="http://instagram.com/<%%= user.instagram_account %>" target="_blank"><%%= user.instagram_account %></a>
-			</td>
-			<td>
-				<%%= user.total_score %>
-			</td>
-		</tr>
-	<%% })  %>
-</script>
+
+
 
 
 <script type="text/template" id="user-profile-template">

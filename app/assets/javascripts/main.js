@@ -1,30 +1,33 @@
-var userCollection = new UserCollection(),
-	router;
+var userCollection, 
+    router;
 
-userCollection.fetch().done(function(){
-	router = new Router({
-		collection: userCollection,
-		$el: $('.users')
-	});
-	Backbone.history.start();
+$(function(){
+  userCollection = new UserCollection();
+
+  userCollection.fetch().done(function(){
+    router = new Router({
+        collection: userCollection, 
+        $el: $('.table-container')
+      });
+      Backbone.history.start();
+    });
 });
 
 
-
 // NOT SURE ABOUT BELOW
-var userListView = new UserListView({
-	collection: userCollection
-})
+// var userListView = new UserListView({
+// 	collection: userCollection
+// })
 
-userListView.fetch().done(function(){
-	router = new Router({
-		collection: userCollection
-	})
-})
+// userListView.fetch().done(function(){
+// 	router = new Router({
+// 		collection: userCollection
+// 	})
+// })
 
 
-$(document).ready(function(e){
-	$('#dropdown').on('click', function() {
-		$('.dropdownposts').slideToggle();
-	});
-})
+// $(document).ready(function(e){
+// 	$('#dropdown').on('click', function() {
+// 		$('.dropdownposts').slideToggle();
+// 	});
+// })

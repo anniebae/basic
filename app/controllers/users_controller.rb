@@ -3,8 +3,7 @@ class UsersController < ApplicationController
   before_filter :authorize, except: [:new, :create, :login]
 
   def index
-    @users = User.all
-    @counter = 1
+    @users = User.sort_by_total_score
     respond_to do | format |
       format.html
       format.json { render json: @users }

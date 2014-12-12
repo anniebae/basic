@@ -67,4 +67,8 @@ class User < ActiveRecord::Base
     self.basic_score + self.survey_score
   end
 
+  def as_json(options) 
+    super(:methods => [:instagram_account_info, :instagram_profile_picture, :total_score])
+  end
+
 end

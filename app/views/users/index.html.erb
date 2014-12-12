@@ -1,28 +1,14 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <div class="users"></div>
 
 <div class="scoreboard-table">
-	<table class="scoreboard">
-		<thead>
-			<tr>
-				<th>Rank</th>
-				<th>Avatar</th>
-				<th>Instagram Account</th>
-				<th>Total Score</th>
-			</tr>
-		</thead>
-		<tbody>
-	<% @users.sort_by_total_score.each do |user| %>
-			<tr>
-				<td><%= @counter %></td>
-				 <% @counter += 1 %>
-				<td>
-					<img src="<%= user.instagram_profile_picture  %>" class="scoreboard_profile_img">
-				</td>
-				<td><a href="http://instagram.com/<%= user.instagram_account %>" target="_blank"><%= user.instagram_account %></a></td>
-				<td><%= user.total_score %></td>
-			</tr>
-	<% end %>
-		</tbody>
-	</table>
+  loading...
 </div>
+
+
 
