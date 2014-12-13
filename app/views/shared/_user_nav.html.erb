@@ -11,14 +11,23 @@
 
 		<div class="collapse navbar-collapse navHeaderCollapse">
 			<ul class="nav navbar-nav navbar-right">
-				<li><%= link_to "Basic Scoreboard", "/#users", method: :get %></li>
-				<li><%= link_to "Profile", "/#users/#{current_user.id}", method: :get %></li>
-				<li><%= link_to "Log Out", logout_path, method: :delete %></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Educate Yourself <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="http://en.wikipedia.org/wiki/Basic_bitch" target="_blank">Wikipedia</a></li>
+						<li><a href="https://www.youtube.com/watch?v=PaghIdSJKvQ" target="_blank">YouTube</a></li>
+						<li><a href="http://nymag.com/thecut/2014/10/what-do-you-really-mean-by-basic-bitch.html" target="_blank">TheCut</a></li>
+						<li><a href="http://massappeal.com/guide-to-dating-a-basic-bitch/" target="_blank">Mass Appeal</a></li>
+					</ul>
+				</li>
+				<li><%= link_to "Log In", login_path, method: :get %></li>
+				<li><%= link_to "Sign Up", new_user_path, method: :get %></li>
 			</ul>
 		</div>
 
 	</div>
 </div>
+
 
 <!-- <div class="navbar navbar-default navbar-fixed-bottom">
 	<div class="container">
