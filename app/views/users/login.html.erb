@@ -4,19 +4,27 @@
 <br>
 <br>
 
-<div class="login-form">
-	<h3 class="login">LOG IN.</h3>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-2 col-sm-3 col-md-4"></div>
+		<div class="col-xs-8 col-sm-6 col-md-4">
+			<div class="login-form">
+				<h3 class="login">LOG IN.</h3>
 
-	<form action="/sessions" method="post">
-		<%= token_tag %>
-		<p>
-			USERNAME:
-			<input type="text" name="username">
-		</p>
-		<p>
-			PASSWORD:
-			<input type="password" name="password">
-		</p>
-		<input type="submit" name="Log In">
-	</form>
+				<form action="/sessions" method="post">
+					<%= token_tag %>
+					<p>
+						USERNAME:
+						<input type="text" name="username">
+					</p>
+					<p>
+						PASSWORD:
+						<input type="password" name="password">
+					</p>
+					<input type="submit" name="Log In">
+				</form>
+			</div>
+		</div>
+	<div class="col-xs-2 col-sm-6 col-md-4"></div>	
+	</div>
 </div>

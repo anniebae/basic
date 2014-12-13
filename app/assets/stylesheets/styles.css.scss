@@ -23,7 +23,7 @@
 }
 
 .login-form {
-  padding-left: 40%;
+margin: auto;
 }
 
 
@@ -62,11 +62,6 @@ input {
 	height: 60px;
 	border-radius: 30px;
 }
-
-
-
-
-
 
 
 
@@ -111,11 +106,18 @@ table tr th:last-child {
 }
 
 
-
 .counter {
 	width: 10px;
 }
 
 .avatar_photo {
 	width: 38px;
+}
+
+a {
+  color: #A18BB5;
+}
+
+a:hover {
+  color: #61536D;
 }
