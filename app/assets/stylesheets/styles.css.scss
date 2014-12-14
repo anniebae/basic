@@ -1,7 +1,11 @@
-.show-users-posts {
-  height: 100px;
-  width: 100px;
-  background-color: black;
+.profile {
+  padding-left: 30%;
+}
+
+.profile img {
+  border-radius: 25px;
+  height: 250px;
+  width: 250px;
 }
 
 @font-face {
@@ -12,8 +16,6 @@
   url('/assets/fonts/NovitoNova-Thin.ttf') format('truetype'),
   url('/assets/fonts/NovitoNova-Thin.svg#webfont3AwWkQXK') format('svg');
 }
-
-
 
 .navbar-brand {
 	font-family: NovitoNova;
@@ -34,12 +36,9 @@
 margin: auto;
 }
 
-
 .signup-form {
   padding-left: 40%;
-
 }
-
 
 body {
 	background-color: white;
