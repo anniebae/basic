@@ -1,5 +1,3 @@
-
-
 var userCollection, 
     router;
 
@@ -18,10 +16,3 @@ $(function(){
 });
 
 
-
-
-// $(document).ready(function(e){
-// 	$('#dropdown').on('click', function() {
-// 		$('.dropdownposts').slideToggle();
-// 	});
-// })
