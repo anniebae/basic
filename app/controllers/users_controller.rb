@@ -31,7 +31,6 @@ class UsersController < ApplicationController
   end
 
   def update
-
     survey = params["survey"]
 
     # calculates survey_score
