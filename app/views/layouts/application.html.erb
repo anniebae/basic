@@ -1,53 +1,53 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Basic</title>
-  
-  <script type="text/template" id="user-table-template">
-      <thead>
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>Basic</title>
+    
+    <script type="text/template" id="user-table-template">
+        <thead>
+          <tr>
+            <th class="rank-column">Rank</th>
+            <th>Avatar</th>
+            <th>Instagram Account</th>
+            <th>Total Score</th>
+          </tr>
+        </thead>
+      <%% collection.each(function(user, index){  %>
         <tr>
-          <th class="rank-column">Rank</th>
-          <th>Avatar</th>
-          <th>Instagram Account</th>
-          <th>Total Score</th>
+          <td>
+            <%%= index + 1 %>
+          </td>
+          <td>
+            <img src="<%%= user.get('instagram_profile_picture')  %>" class="scoreboard_profile_img">
+          </td>
+          <td>
+            <a href="http://instagram.com/<%%= user.get('instagram_account') %>" target="_blank"><%%= user.get('instagram_account') %></a>
+          </td>
+          <td>
+            <%%= user.get('total_score')%>
+          </td>
         </tr>
-      </thead>
-    <%% collection.each(function(user, index){  %>
-      <tr>
-        <td>
-          <%%= index + 1 %>
-        </td>
-        <td>
-          <img src="<%%= user.get('instagram_profile_picture')  %>" class="scoreboard_profile_img">
-        </td>
-        <td>
-          <a href="http://instagram.com/<%%= user.get('instagram_account') %>" target="_blank"><%%= user.get('instagram_account') %></a>
-        </td>
-        <td>
-          <%%= user.get('total_score')%>
-        </td>
-      </tr>
-    <%% }) %>
+      <%% }) %>
+    </script>
+
+  <script type="text/template" id="user-profile-template">
+    <h4><%%= username %></h4>
+    <h5>@<%%= instagram_account %></h5>
+    <img src="<%%= instagram_profile_picture  %>">
+    <h3>BASICNESS: <%%= total_score %></h3>
   </script>
 
-<script type="text/template" id="user-profile-template">
-  <h4><%%= username %></h4>
-  <h5>@<%%= instagram_account %></h5>
-  <img src="<%%= instagram_profile_picture  %>">
-  <h3><%%= total_score %> BASIC PTS.</h3>
-</script>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+    <nav>
+      <%= render partial: current_user ? "/shared/user_nav" : "/shared/non_user_nav" %>
+    </nav>
 
-  <nav>
-    <%= render partial: current_user ? "/shared/user_nav" : "/shared/non_user_nav" %>
-  </nav>
-
-<%= yield %>
+  <%= yield %>
 
 
 
@@ -58,14 +58,14 @@
 
 
 
-<script type="text/template" id="new-user-view-template">
-	<form action="#">
-		<input type="text" name="name" placeholder="Name" />
-		<input type="password" name="password" placeholder="Password" />
-		<input type="text" name="instagram_account" placeholder="Instagram Account" />
-		<input type="submit" />
-	</form>
-</script>
+  <script type="text/template" id="new-user-view-template">
+  	<form action="#">
+  		<input type="text" name="name" placeholder="Name" />
+  		<input type="password" name="password" placeholder="Password" />
+  		<input type="text" name="instagram_account" placeholder="Instagram Account" />
+  		<input type="submit" />
+  	</form>
+  </script>
 
-</body>
-</html>
+  </body>
+  </html>
