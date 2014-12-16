@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.sort_by_total_score
+    # @users = User.all
     respond_to do | format |
       format.html
       format.json { render json: @users }
@@ -15,7 +16,6 @@ class UsersController < ApplicationController
   end
 
   def new
-    # cuz we using a form helper
     @user = User.new
   end
 
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     current_user.survey_score = response_yes * 3
     current_user.survey_completed = true
     current_user.save!
-    redirect_to users_path
+    redirect_to "/#users"
     # user.survey_score = (survey.select{ |question, response| response = "yes" }.length * 3)
 
   end

@@ -39,6 +39,6 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'debugger', group: [:development, :test]
 
 gem 'httparty'
-gem 'pry'
+gem 'pry-rails'
 
 gem 'json'

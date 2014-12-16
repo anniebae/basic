@@ -1,25 +1,8 @@
 
 var userCollection, 
-    router,
-    $submitButton;
+    router;
 
 $(function(){
-
-  // $submitButton = $("#survey-submit");
-  // $submitButton.on('click', function(e){
-  //   e.preventDefault();
-  //   $.ajax({
-  //     url: "/users/",
-  //     method: "patch",
-  //     data: "stuff",
-  //     success: function(){
-  //       console.log('yay');
-      
-  //     router.navigate('users');
-  //     }
-  //   })
-  // })
-
   userCollection = new UserCollection();
 
   userCollection.fetch().done(function(){
