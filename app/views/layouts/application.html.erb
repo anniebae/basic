@@ -4,6 +4,8 @@
     <title>Basic</title>
     
     <script type="text/template" id="user-table-template">
+
+
        <title>SCOREBOARD</title> 
         <thead>
           <tr>
@@ -14,7 +16,7 @@
           </tr>
         </thead>
       <%% collection.each(function(user, index){  %>
-        <tr>
+        <tr class="user-data">
           <td>
             <%%= index + 1 %>
           </td>
@@ -26,6 +28,14 @@
           </td>
           <td>
             <%%= user.get('total_score')%>
+          </td>
+        </tr>
+        <tr style="display:none; text-align: left;" class="instagram-posts">
+          <td></td>
+          <td colspan="3">
+            <%% _.each(user.get('instagram_posts'), function(post, idx ){ %>
+              <p><%%= idx+1 %>.<%%= post %></p>
+            <%% });%>
           </td>
         </tr>
       <%% }) %>

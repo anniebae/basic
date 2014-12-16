@@ -72,7 +72,7 @@ class User < ActiveRecord::Base
   end
 
   def as_json(options) 
-    super(:methods => [:instagram_account_info, :instagram_profile_picture, :total_score])
+    super(:methods => [:instagram_account_info, :instagram_profile_picture, :total_score, :instagram_posts])
   end
 
 end
