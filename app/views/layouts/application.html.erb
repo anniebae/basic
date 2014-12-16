@@ -4,6 +4,7 @@
     <title>Basic</title>
     
     <script type="text/template" id="user-table-template">
+       <title>SCOREBOARD</title> 
         <thead>
           <tr>
             <th class="rank-column">Rank</th>
@@ -31,10 +32,9 @@
     </script>
 
   <script type="text/template" id="user-profile-template">
-    <h4><%%= username %></h4>
-    <h5>@<%%= instagram_account %></h5>
     <img src="<%%= instagram_profile_picture  %>">
-    <h3>BASICNESS: <%%= total_score %></h3>
+    <h4 class="profile-text"><%%= username %> || @<%%= instagram_account %></h4>
+    <h3 class="profile-text">BASICNESS: <%%= total_score %></h3>
   </script>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
