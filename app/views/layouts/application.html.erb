@@ -44,10 +44,19 @@
     </script>
 
   <script type="text/template" id="user-profile-template">
-    <img src="<%%= instagram_profile_picture  %>" class="profile-page-img">
-    <h4 class="profile-text"><%%= username %> || @<%%= instagram_account %></h4>
-    <h3 class="profile-text">BASICNESS: <%%= total_score %></h3>
-    <div class="profile-page-posts"><%%= instagram_posts %></div>
+      <img src="<%%= instagram_profile_picture  %>" class="profile-page-img">
+      <div class="profile-text">
+      <h4><%%= username %> || @<%%= instagram_account %></h4>
+      <h3>BASICNESS: <%%= total_score %></h3>
+      <div>
+    <div class="profile-page-posts">
+      <div class="posts-list">
+        <%% _.each(instagram_posts, function(post, idx){ %>
+          <p><b class="post-number"><%%= idx+1 %>. </b><%%= post %></p>
+        <%% }) %>
+        <h4>Your 20 most recent posts</h4>
+      </div>
+    </div>
   </script>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
