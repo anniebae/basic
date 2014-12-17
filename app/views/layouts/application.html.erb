@@ -44,10 +44,11 @@
     </script>
 
   <script type="text/template" id="user-profile-template">
+  <div class="profile-page">
       <img src="<%%= instagram_profile_picture  %>" class="profile-page-img">
       <div class="profile-text">
       <h4><%%= username %> || @<%%= instagram_account %></h4>
-      <h3>BASICNESS: <%%= total_score %></h3>
+      <h3 class="basicness">BASICNESS: <%%= total_score %></h3>
       <div>
     <div class="profile-page-posts">
       <div class="posts-list">
@@ -56,6 +57,7 @@
         <%% }) %>
       </div>
     </div>
+  <div>
     <h4 class="recent-posts-caption">Your 20 most recent posts</h4>
   </script>
 
