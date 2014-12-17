@@ -7,9 +7,9 @@
 
         <thead>
           <tr>
-            <td colspan="4" class="survey-greeting">HEY <%= current_user.username.upcase if current_user %>, CHECK OUT YOUR BASICNESS..</td>
+            <td colspan="4" class="survey-greeting">HEY <%= current_user.username.upcase if current_user %>, CHECK YOUR OWN BASICNESS... </td>
           </tr>
-          <tr>
+          <tr class="column-names">
             <th class="rank-column">Rank</th>
             <th>Avatar</th>
             <th>Instagram Account</th>
@@ -33,11 +33,12 @@
         </tr>
         <tr style="text-align: left;" class="instagram-posts">
           <td></td>
-          <td colspan="3">
+          <td colspan="2" class="user-posts">
             <%% _.each(user.get('instagram_posts'), function(post, idx ){ %>
-              <p><%%= idx+1 %>.<%%= post %></p>
-            <%% });%>
+              <p><b class="post-number"><%%= idx+1 %>. </b><%%= post %></p>
+            <%% }); %>
           </td>
+          <td></td>
         </tr>
       <%% }) %>
     </script>
@@ -46,6 +47,7 @@
     <img src="<%%= instagram_profile_picture  %>">
     <h4 class="profile-text"><%%= username %> || @<%%= instagram_account %></h4>
     <h3 class="profile-text">BASICNESS: <%%= total_score %></h3>
+
   </script>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>

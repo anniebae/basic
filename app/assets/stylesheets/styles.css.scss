@@ -10,7 +10,18 @@
 
 .instagram-posts {
   display: none;
+}
 
+.user-posts {
+  text-align: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.post-number {
+  color: #A18BB5;
 }
 
 .profile {
@@ -71,8 +82,8 @@ body {
 }
 
 .welcome_logo {
-	height: 65%;
-	width: 65%;
+	height: 68%;
+	width: 68%;
   margin-left: 10%;
   margin-top: -2.5%;
 }
@@ -129,6 +140,9 @@ table tr th:last-child {
   overflow-scrolling: auto; 
 }
 
+.column-names {
+  color: #D69330;
+}
 
 .scoreboard_profile_img:hover {
 	opacity: 1;
