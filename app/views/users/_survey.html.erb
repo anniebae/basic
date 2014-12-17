@@ -93,11 +93,30 @@
 <!-- what is going on -->
 <script>
 	$(function(){
-		$("#survey-submit").prop("disabled", true);
-	});
-</script>
-<!-- what is going on -->
+		// $("#survey-submit").prop("disabled", true);
 
+
+		$('#survey-submit :radio').click(function() {
+			var disabled = $('#survey-submit input').filter(function() {
+				return $(':radio:checked', this).length == 0;
+			}).length > 0;
+			$('#survey-submit .find').prop('disabled', disabled);
+		});
+
+
+	// $('#form1 :radio').click(function() {
+	//     var disabled = $('#form1 li').filter(function() { 
+	//     	return $(':radio:checked', this).length == 0; 
+	//     }).length > 0;
+	//     $('#form1 .find').prop('disabled', disabled);
+	// });
+
+
+	});
+	
+</script>
+
+<!-- what is going on -->
 
 <br>
 <br>
