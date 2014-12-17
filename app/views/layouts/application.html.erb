@@ -5,9 +5,10 @@
     
     <script type="text/template" id="user-table-template">
 
-
-       <title>SCOREBOARD</title> 
         <thead>
+          <tr>
+            <td colspan="4" class="survey-greeting">HELLO, <%= current_user.username.upcase %> YOU SCORED</td>
+          </tr>
           <tr>
             <th class="rank-column">Rank</th>
             <th>Avatar</th>
@@ -30,7 +31,7 @@
             <%%= user.get('total_score')%>
           </td>
         </tr>
-        <tr style="display:none; text-align: left;" class="instagram-posts">
+        <tr style="text-align: left;" class="instagram-posts">
           <td></td>
           <td colspan="3">
             <%% _.each(user.get('instagram_posts'), function(post, idx ){ %>
