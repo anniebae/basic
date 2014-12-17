@@ -19,6 +19,9 @@
       <%% collection.each(function(user, index){  %>
         <tr class="user-data">
           <td>
+            <%% if (index === 0) {%>
+              <%= image_tag 'gold-crown.png', :class => "crown" %>
+            <%% } %>
             <%%= index + 1 %>
           </td>
           <td>
