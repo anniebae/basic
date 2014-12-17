@@ -1,6 +1,11 @@
 .survey-greeting {
   font-family: NovitoNova;
   font-size: 100px;
+  border: 0;
+}
+
+.survey-greeting-row {
+  border-top: 1px solid #eee;
 }
 
 .instagram-posts {
@@ -113,8 +118,9 @@ table tr th:last-child {
 }
 
 .table-container {
-  padding-left: 17%;
-  margin-top: 100px;
+  padding-left: 15%;
+  margin-top: 80px;
+  overflow-scrolling: auto; 
 }
 
 
