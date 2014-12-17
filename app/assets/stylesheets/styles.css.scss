@@ -1,6 +1,6 @@
 .survey-greeting {
   font-family: NovitoNova;
-  font-size: 70px;
+  font-size: 65px;
   border: 0;
 }
 
@@ -30,7 +30,7 @@
 
 .profile-text {
   font-family: Century Gothic;
-  margin-left: 7.5%;
+  margin-left: -12%;
 }
 
 .profile img {
@@ -137,7 +137,7 @@ table tr th:last-child {
 .table-container {
   padding-left: 15%;
   margin-top: 60px;
-  overflow-scrolling: auto; 
+  margin-bottom: 50px;
 }
 
 .column-names {
@@ -168,3 +168,12 @@ a:hover {
   color: #61536D;
 }
 
+.profile-page-img {
+  margin-left: -12%;
+}
+
+.profile-page-posts {
+  margin-left: 32%;
+  margin-top: -45%;
+  width: 38%;
+}

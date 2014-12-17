@@ -44,10 +44,10 @@
     </script>
 
   <script type="text/template" id="user-profile-template">
-    <img src="<%%= instagram_profile_picture  %>">
+    <img src="<%%= instagram_profile_picture  %>" class="profile-page-img">
     <h4 class="profile-text"><%%= username %> || @<%%= instagram_account %></h4>
     <h3 class="profile-text">BASICNESS: <%%= total_score %></h3>
-
+    <div class="profile-page-posts"><%%= instagram_posts %></div>
   </script>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
