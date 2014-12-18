@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
   validates_presence_of :password, :on => :create
+  validates_presence_of :instagram_account
   validates :username, uniqueness: true
 
 
@@ -38,7 +39,9 @@ class User < ActiveRecord::Base
     self.instagram_account_info
     instagram_id = self.instagram_account_id
     api_response = HTTParty.get("https://api.instagram.com/v1/users/#{instagram_id}/media/recent/?access_token=#{ENV['INSTAGRAM_TOKEN']}")
-    api_response['data'].map do |post| 
+    response = api_response["data"] rescue []
+
+    response.map do |post| 
       if post['caption']
         post['caption']['text']
       else
