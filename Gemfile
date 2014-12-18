@@ -43,3 +43,4 @@ gem 'pry-rails'
 
 gem 'json'
 gem "twitter-bootstrap-rails"
+gem 'font-awesome-sass', '~> 4.2.0'

@@ -22,8 +22,12 @@ class UsersController < ApplicationController
   def create
     user = User.create(user_params)
     session[:user_id] = user.id
-    redirect_to user_path(user)
-
+    if user.persisted?
+      redirect_to user_path(user)
+    else 
+      @user = User.new
+      render :new
+    end
   end
 
   def edit
