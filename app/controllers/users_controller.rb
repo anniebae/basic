@@ -4,7 +4,6 @@ class UsersController < ApplicationController
 
   def index
     @users = User.sort_by_total_score
-    # @users = User.all
     respond_to do | format |
       format.html
       format.json { render json: @users }

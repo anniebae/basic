@@ -20,8 +20,13 @@ var Router = Backbone.Router.extend({
     this.$el.html(this.view.render().$el);
   },
   index: function() {
+    if (this.userTableView){
+      return this.setView(this.userTableView);
+    }
     var view = new UserTableView({
-      collection: this.collection });
+                      collection: this.collection 
+                });
+    this.userTableView = view;
     this.setView(view);
   },
   show: function(id) {
