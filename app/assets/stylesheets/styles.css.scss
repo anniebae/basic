@@ -176,7 +176,7 @@ a:hover {
 }
 
 .basicness {
-  margin-left: 23%;
+  margin-left: 20%;
   color: rgb(222, 209, 200);
 }
 
@@ -222,11 +222,18 @@ a:hover {
 }
 
 .about-basic-text {
+  font-family: NovitoNova;
+  font-size: 260%;
   position: absolute;
   text-align: center;
   margin-left: 11%;
-  margin-top: 18%;
+  margin-right: 35%;
+  margin-top: 0%;
   color: white;
+}
+
+.about-app {
+  font-size: 220%;
 }
 
 .carousel-control.left, 
