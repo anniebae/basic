@@ -1,8 +1,8 @@
-# ****** AFTER ANDREW *******
-
 class User < ActiveRecord::Base
   has_secure_password
   validates_presence_of :password, :on => :create
+  validates :username, uniqueness: true
+
 
   attr_accessor :instagram_account_id, :instagram_profile_picture
 
