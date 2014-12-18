@@ -223,4 +223,13 @@ a:hover {
 
 .about-basic-text {
   position: absolute;
+  text-align: center;
+  margin-left: 11%;
+  margin-top: 18%;
+  color: white;
+}
+
+.carousel-control.left, 
+.carousel-control.right {
+    background-image: none
 }
