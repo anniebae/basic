@@ -82,10 +82,9 @@ body {
 }
 
 .welcome_logo {
-	height: 68%;
-	width: 68%;
-  margin-left: 10%;
-  margin-top: -2.5%;
+	height: 55%;
+	width: 55%;
+  margin-left: 22.5%;
 }
 
 .survey {
@@ -136,7 +135,7 @@ table tr th:last-child {
 
 .table-container {
   padding-left: 15%;
-  margin-top: 60px;
+  margin-top: 50px;
   margin-bottom: 50px;
 }
 
@@ -201,10 +200,12 @@ a:hover {
 }
 
 .about-basic {
-  margin-top: 8%;
+  margin-top: 2%;
+  margin-bottom: 40px;
+  margin-left: 25%;
   border-radius: 250%;
-  height: 500px;
-  width: 500px;
+  height: 655px;
+  width: 655px;
   background-color: lightblue;
 }
 
@@ -212,6 +213,14 @@ a:hover {
   height: 3%;
 }
 
-.carousel {
-  padding-top: 32px;
+#welcome-carousel {
+  margin-left: -20%;
+}
+
+.carousel-indicators {
+  margin-bottom: 30px;
+}
+
+.about-basic-text {
+  position: absolute;
 }

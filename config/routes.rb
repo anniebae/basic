@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   root "welcome#index"
 
-  get '/about' => "welcome#about"
-
   resources :users, only: [ :index, :show, :new, :create, :update ]
 
   get '/api/users' => "user_api#index"
