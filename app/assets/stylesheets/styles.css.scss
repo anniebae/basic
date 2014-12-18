@@ -106,8 +106,7 @@ input {
 	border-radius: 30px;
 }
 
-
-
+/*scoreboard styling*/
 table {
   border-collapse: collapse;
   width: 80%;
@@ -132,6 +131,7 @@ table tr td:last-child,
 table tr th:last-child {
   border-right: 0;
 }
+/*scoreboard styling*/
 
 .table-container {
   padding-left: 15%;
@@ -240,7 +240,6 @@ a:hover {
 .carousel-control.right {
     background-image: none
 }
-
 
 #chevron-arrows {
   width: 100%;

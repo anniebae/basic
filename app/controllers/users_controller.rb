@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   before_filter :authorize, except: [:new, :create, :login]
 
   def index
@@ -55,11 +54,9 @@ class UsersController < ApplicationController
   def login
   end
 
-
   private
 
   def user_params
     params.require(:user).permit(:username, :password, :instagram_account)
   end
-
 end

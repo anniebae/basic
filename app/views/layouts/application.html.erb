@@ -1,98 +1,90 @@
-  <!DOCTYPE html>
-  <html>
-  <head>
-    <title>Basic</title>
-    
-    <script type="text/template" id="user-table-template">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic</title>
+  
+  <script type="text/template" id="user-table-template">
+    <thead>
+      <tr>
+        <td colspan="4" class="survey-greeting">HEY <%= current_user.username.upcase if current_user %>, CHECK YOUR OWN BASICNESS... </td>
+      </tr>
+      <tr class="column-names">
+        <th class="rank-column">Rank</th>
+        <th>Avatar</th>
+        <th>Instagram Account</th>
+        <th>Total Score (bsc.)</th>
+      </tr>
+    </thead>
+    <%% collection.each(function(user, index){  %>
+      <tr class="user-data">
+        <td>
+          <%% if (index === 0) {%>
+            <%= image_tag 'gold-crown.png', :class => "crown" %>
+          <%% } %>
+          <%%= index + 1 %>
+        </td>
+        <td>
+          <img src="<%%= user.get('instagram_profile_picture')  %>" class="scoreboard_profile_img">
+        </td>
+        <td>
+          <a href="http://instagram.com/<%%= user.get('instagram_account') %>" target="_blank"><%%= user.get('instagram_account') %></a>
+        </td>
+        <td>
+          <%%= user.get('total_score')%>
+        </td>
+      </tr>
+      <tr style="text-align: left;" class="instagram-posts">
+        <td></td>
+        <td colspan="2" class="user-posts">
+          <%% _.each(user.get('instagram_posts'), function(post, idx ){ %>
+            <p><b class="post-number"><%%= idx+1 %>. </b><%%= post %></p>
+          <%% }); %>
+        </td>
+        <td></td>
+      </tr>
+    <%% }) %>
+  </script>
 
-        <thead>
-          <tr>
-            <td colspan="4" class="survey-greeting">HEY <%= current_user.username.upcase if current_user %>, CHECK YOUR OWN BASICNESS... </td>
-          </tr>
-          <tr class="column-names">
-            <th class="rank-column">Rank</th>
-            <th>Avatar</th>
-            <th>Instagram Account</th>
-            <th>Total Score (bsc.)</th>
-          </tr>
-        </thead>
-      <%% collection.each(function(user, index){  %>
-        <tr class="user-data">
-          <td>
-            <%% if (index === 0) {%>
-              <%= image_tag 'gold-crown.png', :class => "crown" %>
-            <%% } %>
-            <%%= index + 1 %>
-          </td>
-          <td>
-            <img src="<%%= user.get('instagram_profile_picture')  %>" class="scoreboard_profile_img">
-          </td>
-          <td>
-            <a href="http://instagram.com/<%%= user.get('instagram_account') %>" target="_blank"><%%= user.get('instagram_account') %></a>
-          </td>
-          <td>
-            <%%= user.get('total_score')%>
-          </td>
-        </tr>
-        <tr style="text-align: left;" class="instagram-posts">
-          <td></td>
-          <td colspan="2" class="user-posts">
-            <%% _.each(user.get('instagram_posts'), function(post, idx ){ %>
-              <p><b class="post-number"><%%= idx+1 %>. </b><%%= post %></p>
-            <%% }); %>
-          </td>
-          <td></td>
-        </tr>
+<script type="text/template" id="user-profile-template">
+<div class="profile-page">
+    <img src="<%%= instagram_profile_picture  %>" class="profile-page-img">
+    <div class="profile-text">
+    <h4><%%= username %> || @<%%= instagram_account %></h4>
+    <h3 class="basicness">BASICNESS: <%%= total_score %> BSC.</h3>
+    <div>
+  <div class="profile-page-posts">
+    <div class="posts-list">
+      <%% _.each(instagram_posts, function(post, idx){ %>
+        <p><b class="post-number"><%%= idx+1 %>. </b><%%= post %></p>
       <%% }) %>
-    </script>
-
-  <script type="text/template" id="user-profile-template">
-  <div class="profile-page">
-      <img src="<%%= instagram_profile_picture  %>" class="profile-page-img">
-      <div class="profile-text">
-      <h4><%%= username %> || @<%%= instagram_account %></h4>
-      <h3 class="basicness">BASICNESS: <%%= total_score %> BSC.</h3>
-      <div>
-    <div class="profile-page-posts">
-      <div class="posts-list">
-        <%% _.each(instagram_posts, function(post, idx){ %>
-          <p><b class="post-number"><%%= idx+1 %>. </b><%%= post %></p>
-        <%% }) %>
-      </div>
     </div>
-  <div>
-    <h4 class="recent-posts-caption">Your 20 most recent posts</h4>
-  </script>
+  </div>
+<div>
+  <h4 class="recent-posts-caption">Your 20 most recent posts</h4>
+</script>
 
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
 
-    <nav>
-      <%= render partial: current_user ? "/shared/user_nav" : "/shared/non_user_nav" %>
-    </nav>
+  <nav>
+    <%= render partial: current_user ? "/shared/user_nav" : "/shared/non_user_nav" %>
+  </nav>
 
-  <%= yield %>
-
-
-
+<%= yield %>
 
 
 
+<script type="text/template" id="new-user-view-template">
+	<form action="#">
+		<input type="text" name="name" placeholder="Name" />
+		<input type="password" name="password" placeholder="Password" />
+		<input type="text" name="instagram_account" placeholder="Instagram Account" />
+		<input type="submit" />
+	</form>
+</script>
 
-
-
-
-  <script type="text/template" id="new-user-view-template">
-  	<form action="#">
-  		<input type="text" name="name" placeholder="Name" />
-  		<input type="password" name="password" placeholder="Password" />
-  		<input type="text" name="instagram_account" placeholder="Instagram Account" />
-  		<input type="submit" />
-  	</form>
-  </script>
-
-  </body>
-  </html>
+</body>
+</html>

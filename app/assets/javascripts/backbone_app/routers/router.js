@@ -3,14 +3,11 @@ var Router = Backbone.Router.extend({
     this.collection = options.collection;
     this.$el = options.$el;
   },
-
   routes: {
     "users"     : "index",
     "users/new" : "new",
     "users/:id" : "show"
   },
-  
-
   setView: function(view){
     if (this.view) {
       this.view.remove();

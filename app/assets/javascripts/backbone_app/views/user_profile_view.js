@@ -9,8 +9,4 @@ var UserProfileView = Backbone.View.extend({
 		this.$el.html(this.template(this.model.toJSON()));
 		return this;
 	},
-})
-
-var Test = 123;
-
-var asdfasdf = "asdfasdfasdf"
+});

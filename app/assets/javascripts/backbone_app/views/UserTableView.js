@@ -16,6 +16,3 @@ var UserTableView = Backbone.View.extend({
     $(tr).slideToggle();
   }
 })
-
-
-

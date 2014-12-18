@@ -1,4 +1,3 @@
-
 var userCollection, 
     router;
 
@@ -13,5 +12,3 @@ $(function(){
       Backbone.history.start();
     });
 });
-
-

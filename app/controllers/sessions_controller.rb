@@ -4,14 +4,11 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to "/#users/#{current_user.id}"
-
     else
       session[:user_id] = nil
       redirect_to root_path
     end
   end
-
-
 
   def logout
     session[:user_id] = nil
