@@ -42,3 +42,4 @@ gem 'httparty'
 gem 'pry-rails'
 
 gem 'json'
+gem "twitter-bootstrap-rails"
