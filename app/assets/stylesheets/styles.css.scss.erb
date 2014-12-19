@@ -1,7 +1,11 @@
-.survey-greeting {
-  font-family: NovitoNova;
-  font-size: 65px;
-  border: 0;
+
+@font-face {
+  font-family: 'NovitoNova';    
+  src: url(<%= asset_path 'NovitoNova-Thin.otf' %>);
+  src: url(<%= asset_path 'NovitoNova-Thin.otf?#iefix' %>) format('embedded-opentype'),
+  url(<%= asset_path 'NovitoNova-Thin.woff2' %>) format('woff2'),
+  url(<%= asset_path 'NovitoNova-Thin.ttf' %>) format('truetype'),
+  url(<%= asset_path 'NovitoNova-Thin.svg#webfont3AwWkQXK' %>) format('svg');
 }
 
 .survey-greeting-row {
@@ -39,13 +43,11 @@
   width: 300px;
 }
 
-@font-face {
-  font-family: 'NovitoNova';    
-  src: url('/assets/fonts/NovitoNova-Thin.otf');
-  src: url('/assets/fonts/NovitoNova-Thin.otf?#iefix') format('embedded-opentype'),
-  url('/assets/fonts/NovitoNova-Thin.woff2') format('woff2'),
-  url('/assets/fonts/NovitoNova-Thin.ttf') format('truetype'),
-  url('/assets/fonts/NovitoNova-Thin.svg#webfont3AwWkQXK') format('svg');
+
+.survey-greeting {
+  font-family: NovitoNova;
+  font-size: 65px;
+  border: 0;
 }
 
 .navbar-brand {
