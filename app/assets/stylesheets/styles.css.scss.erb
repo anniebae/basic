@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'NovitoNova';    
+  src: url(<%= asset_path 'NovitoNova-Thin.otf' %>);
+  src: url(<%= asset_path 'NovitoNova-Thin.otf?#iefix' %>) format('embedded-opentype'),
+  url(<%= asset_path 'NovitoNova-Thin.woff2' %>) format('woff2'),
+  url(<%= asset_path 'NovitoNova-Thin.ttf' %>) format('truetype'),
+  url(<%= asset_path 'NovitoNova-Thin.svg#webfont3AwWkQXK' %>) format('svg');
+}
+
 .survey-greeting-row {
   border-top: 1px solid #eee;
 }
@@ -32,6 +41,7 @@
   height: 300px;
   width: 300px;
 }
+
 
 .survey-greeting {
   font-family: NovitoNova;
