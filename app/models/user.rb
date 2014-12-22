@@ -7,10 +7,20 @@ class User < ActiveRecord::Base
 
   attr_accessor :instagram_account_id, :instagram_profile_picture
 
+
+# *** NOT RIGHT ***
+  def valid_instagram_account
+    username = self.instagram_account
+    api_response = HTTParty.get("https://api.instagram.com/v1/users/search?q=#{username}&access_token=#{ENV['INSTAGRAM_TOKEN']}")
+    data = api_response["data"].empty?
+    data
+  end
+# *** NOT RIGHT ***
+
+
   def completed_survey?
     return survey_completed
   end
-
 
   def self.sort_by_total_score
     puts 'sorting....'

@@ -16,6 +16,11 @@
         <br>
         <%= f.submit :submit %>
         <% end %>
+
+<% if @error  %>
+<span id="ig_error_msg"><%= @error %></span>
+<% end %>
+
       </div>
     </div>
     <div class="col-xs-2 col-sm-6 col-md-3"></div>  
