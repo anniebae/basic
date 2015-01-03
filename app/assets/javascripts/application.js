@@ -16,7 +16,7 @@
 //= require bootstrap.min
 //= require underscore
 //= require backbone
-//= require backbone_app/models/User
+//= require backbone_app/models/user
 //= require backbone_app/collections/user_collection
 //= require backbone_app/views/UserTableView
 //= require backbone_app/views/user_profile_view
