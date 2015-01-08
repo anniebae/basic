@@ -4,19 +4,14 @@ class User < ActiveRecord::Base
   validates_presence_of :instagram_account
   validates :username, uniqueness: true
 
-
   attr_accessor :instagram_account_id, :instagram_profile_picture
 
-
-# *** NOT RIGHT ***
   def valid_instagram_account
     username = self.instagram_account
     api_response = HTTParty.get("https://api.instagram.com/v1/users/search?q=#{username}&access_token=#{ENV['INSTAGRAM_TOKEN']}")
     data = api_response["data"].empty?
     data
   end
-# *** NOT RIGHT ***
-
 
   def completed_survey?
     return survey_completed
@@ -62,8 +57,6 @@ class User < ActiveRecord::Base
 
   def insta_score
     posts = self.instagram_posts
-    # words = ["starbucks", "i can't even", "thanks", 'some', 'wall']
-
     words = ["starbucks", "psl", "pumpkin spice latter", "uggs", "I can't even", "I literally can't", "I just can't", "juicy", "tiffany's", "plur", "edm", "event", "food", "breakfast", "brunch", "lunch", "dinner", "girlfriend", "girlfriends", "gf", "boyfriend", "bf", "north face", "fleece", "ootd", "tbt", "throwback", "fashion", "michael kors", "armcandy", "reality", "bravo", "yoga", "pants", "lululemon", "lululemons", "shopping", "pinterest", "diy", "skinny", "fat", "sorority", "frat", "selfie", "selfies", "neon", "nike", "rosche", "wait", "duckface", "kiss", "xoxo", "love", "peace", "qotd", "mani", "pedi", "nails", "bad hair day", "vegas", "hot dogs or legs", "diet", "lol", "omg", "lmao", "ryan gosling", "channing tatum", "joseph gordon-levitt", "joseph gordon levitt", "jgl", "gym", "workout", "iphone", "coffee", "latte", "cappuccino", "frap", "espresso", "run", "like", "basic", "caramel", "macchiato", "fitness", "half", "water", "seltzer", "half", "baby", "shoes", "sale", "favorite", "fave", "bestfriend", "bestie", "besties", "bff", "bffs", "obvi", "obviously", "yolo", "swag", "bitch", "bitches", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "turnt", "adorable", "ugh", "cute", "so cute", "sweater weather", "tgif", "sunday funday", "twinsies", "funsies", "ew", "totally", "totes", "yay", "mirror", "outfit", "last night", "mimosas", "bloody mary", "bottomless brunch", "namaste", "obsessed", "bagel", "bagels", "boozy", "i die", "morning", "goodnight", "exercise", "blessed", "situation", "!", "ily", "ilysm", "imy", "ride or die", "i die", "basic", "throwback", "caffeine", "sample", "quote", "fetch", "def", "fabulous", "fab", "heaven"]
 
     
