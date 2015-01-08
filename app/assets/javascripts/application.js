@@ -16,9 +16,8 @@
 //= require bootstrap.min
 //= require underscore
 //= require backbone
-//= require backbone_app/models/User
-//= require backbone_app/collections/user_collection
-//= require backbone_app/views/UserTableView
-//= require backbone_app/views/user_profile_view
-//= require backbone_app/routers/router
+//= require_tree ./backbone_app/routers
+//= require_tree ./backbone_app/models
+//= require_tree ./backbone_app/collections
+//= require_tree ./backbone_app/views
 //= require main
