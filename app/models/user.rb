@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
     self.instagram_account_info
     instagram_id = self.instagram_account_id
     api_response = HTTParty.get("https://api.instagram.com/v1/users/#{instagram_id}/media/recent/?access_token=#{ENV['INSTAGRAM_TOKEN']}")
-    response = api_response["data"] rescue []
+    response = api_response["data"] || [] rescue []
 
     response.map do |post| 
       if post['caption']

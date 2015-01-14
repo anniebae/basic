@@ -1,6 +1,8 @@
 var NewUserView = Backbone.View.extend({
 	className: "user-form",
-	template: _.template($("#new-user-view-template").html()),
+	template: function() { 
+		return _.template($("#new-user-view-template").html()) 
+	},
 	events: {
 		"submit" : "createUser"
 	},
